@@ -68,6 +68,26 @@ public class MultiTest {
 		
 	}
 	
+	@Test(priority=3)
+	public void AdvanceDropDown2() throws InterruptedException
+	{
+				
+		WebElement dropdownoption = driver.findElement(By.id("searchDropdownBox"));
+		
+		Select sel = new Select(dropdownoption);
+		
+		List<WebElement>li = sel.getOptions();
+		
+		System.out.println(li.size());
+		
+		for(int i = 0 ; i<li.size() ; i++)
+		{
+			li.get(i).click();
+			System.out.println(li.get(i).getText());
+		}
+		
+	}
+	
 	@AfterClass
 	public void Cleanup()
 	{
